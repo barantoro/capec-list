@@ -12,6 +12,11 @@
             :searchMode="searchMode"
             @editDescription="editDescription"
             />
+            <tr v-if="items.length === 0">
+                <td :colspan="tableHeaders.length" class="no-data">
+                    No data to display
+                </td>
+            </tr>
         </tbody>
     </table>
     <EditModal v-if="showEditModal" :content="editModalContent" @save="handleSave" @cancel="handleCancel" />
@@ -59,6 +64,11 @@ tr:hover {
 
 .strong {
   font-weight: 700;
+}
+
+.no-data {
+    text-align: center;
+    padding: 1rem;
 }
 
 @media (max-width: 768px) {  

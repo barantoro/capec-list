@@ -111,4 +111,8 @@ input, textarea {
     background: #1c1c1c;
     color: #f4f4f4;
 }
+.docs-story .edit-modal {
+    top: 15% !important;
+    left: 15% !important;
+}
 </style>
