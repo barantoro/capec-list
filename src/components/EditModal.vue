@@ -58,6 +58,9 @@ const handleCancel = () => {
     padding: 1rem;
     z-index: 999;
 }
+.form-wrapper {
+    padding: 1rem;
+}
 .form-wrapper, .form-group {
     display: flex;
     flex-direction: column;
@@ -71,7 +74,9 @@ label {
 input, textarea {
     border: 1px solid #ccc;
     border-radius: .25rem;
-    padding: .5rem .25rem;
+    padding: .5rem;
+    outline: none;
+    background: #f4f4f4;
 }
 .backdrop {
     position: absolute;
@@ -85,8 +90,8 @@ input, textarea {
 .modal-actions {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1rem;
+    justify-content: flex-end;
+    gap: .5rem;
     margin-top: 1rem;
 }
 .modal-actions button {
@@ -98,17 +103,12 @@ input, textarea {
     cursor: pointer;
 }
 .modal-actions button:hover {
-    background: #1c1c1c;
-    color: #f4f4f4;
     transition: .5s;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .modal-actions button:last-child {
     border-color: #1c1c1c;
     background: #1c1c1c;
     color: #f4f4f4;
-}
-.modal-actions button:last-child:hover {
-    transition: .5s;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 </style>

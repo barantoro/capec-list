@@ -4,25 +4,7 @@
       <div class="card">
         <div class="table-container">
           <SearchBar v-model:searchQuery="searchQuery" v-model:searchMode="searchMode" />
-          <table>
-            <!-- <TableHeader :headers="Object.keys(patterns[0])" /> -->
-            <TableHeader :headers="tableHeaders" />
-            <tbody>
-              <TableRow
-                v-for="(pattern, index) in patterns"
-                :key="index"
-                :pattern="pattern"
-                :index="index"
-                :activeIndex="activeIndex"
-                :visibleItemsCount="visibleItemsCount"
-                :searchQuery="searchQuery"
-                :searchMode="searchMode"
-                @toggleDescription="toggleExecutionFlowDescription"
-                @editDescription="editDescription"
-              />
-            </tbody>
-          </table>
-          <EditModal v-if="showEditModal" :content="editModalContent" @save="handleSave" @cancel="handleCancel" />
+          <CustomTable :tableHeaders="tableHeaders" :items="patterns" :searchQuery="searchQuery" :searchMode="searchMode" />
         </div>
       </div>
     </div>
@@ -30,28 +12,16 @@
 </template>
 
 
-<script setup lang="ts">
+<script setup>
 import { ref } from 'vue';
 import { useAttackPatterns } from '@/composables/useAttackPatterns';
-import { useEditModal } from '@/composables/useEditModal';
-import SearchBar from '@/components/SearchBar.vue';
-import TableHeader from '@/components/TableHeader.vue';
-import TableRow from '@/components/TableRow.vue';
-import EditModal from '@/components/EditModal.vue';
+import SearchBar from './components/SearchBar.vue';
+import CustomTable from './components/CustomTable.vue';
 
 const searchQuery = ref('');
 const searchMode = ref('highlight');
-
 const tableHeaders = ref(['Description', 'Prerequisites', 'Skills Required', 'Resources Required', 'Likelihood of Attack', 'Typical Severity', 'Consequences', 'Execution Flow', 'Mitigations'])
-
-
 const { patterns } = useAttackPatterns(searchQuery, searchMode);
-
-const { showEditModal, editModalContent, openModal, handleSave, handleCancel } = useEditModal();
-
-const editDescription = (pattern) => {
-  openModal({ description: pattern.Description });
-};
 </script>
 
 
@@ -86,28 +56,6 @@ body {
     padding: 1rem;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* table-layout: fixed; */
-}
-
-tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-tr:hover {
-    background-color: #f1f1f1;
-}
-
-.strong {
-  font-weight: 700;
-}
-
 @media (max-width: 768px) {
     .table-container {
         overflow-x: auto;
@@ -116,39 +64,6 @@ tr:hover {
 
     .text-center {
       text-align: unset !important;
-    }
-    
-    table {
-        border: 0;
-    }
-    
-    th, td {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: left;
-    }
-    
-    th {
-        position: absolute;
-        top: -9999px;
-        left: -9999px;
-    }
-    
-    td {
-        border: 1px solid #ddd;
-        position: relative;
-    }
-    
-    td::before {
-        content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
-        padding-right: 15px;
-        white-space: nowrap;
-        font-weight: bold;
-        text-align: left;
     }
 }
 </style>

@@ -56,6 +56,8 @@ watch([localSearchQuery, localSearchMode], ([newQuery, newMode]) => {
   margin-bottom: 10px;
   padding: .5rem;
   width: 100%;
+  outline: none;
+  box-shadow: none;
 }
 .table-interactives-input-wrapper {
   display: flex;
