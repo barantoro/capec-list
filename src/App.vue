@@ -44,6 +44,7 @@ body {
   background: #eaeaea;
   box-shadow: 6px 6px 8px #dcdcdc, -6px -6px 8px #f6f6f6;
   border-radius: 8px;
+  padding-bottom: 1rem;
 }
 
 .text-center {
@@ -51,9 +52,10 @@ body {
 }
 
 .table-container {
-    /* width: 100%; */
     overflow-x: auto;
     padding: 1rem;
+    overflow: auto;
+    height: 87vh;
 }
 
 @media (max-width: 768px) {

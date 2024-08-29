@@ -49,9 +49,12 @@ table {
     border-collapse: collapse;
     background: #fff;
     border-radius: 8px;
-    overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* table-layout: fixed; */
+}
+
+thead tr th {
+  position: sticky;
+  top: -1rem;
 }
 
 tr:nth-child(even) {
@@ -74,6 +77,10 @@ tr:hover {
 @media (max-width: 768px) {  
     table {
         border: 0;
+    }
+
+    thead tr th {
+        position: absolute;
     }
     
     th, td {
