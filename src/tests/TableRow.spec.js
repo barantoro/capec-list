@@ -54,11 +54,11 @@ describe('TableRow.vue', () => {
         expect(wrapper.vm.expandRow).toBe(false);
         expect(wrapper.find('.expanded-row').exists()).toBe(false);
 
-        await wrapper.find('div.epxand-icon-wrapper').trigger('click');
+        await wrapper.find('div.expand-icon-wrapper').trigger('click');
         expect(wrapper.vm.expandRow).toBe(true);
         expect(wrapper.find('.expanded-row').exists()).toBe(true);
 
-        await wrapper.find('div.epxand-icon-wrapper').trigger('click');
+        await wrapper.find('div.expand-icon-wrapper').trigger('click');
         expect(wrapper.vm.expandRow).toBe(false);
         expect(wrapper.find('.expanded-row').exists()).toBe(false);
     });

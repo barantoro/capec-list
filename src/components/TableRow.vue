@@ -1,6 +1,6 @@
 <template>
   <tr>
-    <td>
+    <td class="description-wrapper" data-label="Description">
       <DescriptionCell
         :expand-row="expandRow"
         :description="pattern?.Description"
@@ -10,28 +10,28 @@
         @edit-description="$emit('editDescription', pattern)"
       />
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Prerequisites">
       {{ pattern?.Prerequisites.length }}
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Skills Required">
       {{ pattern?.Skills_Required.length }}
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Resources Required">
       {{ pattern?.Resources_Required.length }}
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Likelihood of Attack">
       <ChipsBadge :value="pattern?.Likelihood_Of_Attack" />
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Typical Severity">
       <ChipsBadge :value="pattern?.Typical_Severity" />
     </td>
-    <td>
+    <td data-label="Consequences">
       <ConsequencesCell :consequences="pattern?.Consequences" />
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Execution Flow">
       {{ pattern?.Execution_Flow.length }}
     </td>
-    <td class="text-center">
+    <td class="text-center" data-label="Mitigations">
       {{ pattern?.Mitigations.length }}
     </td>
   </tr>
@@ -41,7 +41,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref } from 'vue';
 import ExpandRow from './ExpandRow.vue'
 import ChipsBadge from './ChipsBadge.vue'
 import ConsequencesCell from './ConsequencesCell.vue'
@@ -100,5 +100,13 @@ mark {
 
 .number-wrapper {
   background-color: red;
+}
+
+@media (max-width: 768px) {
+  td {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
 }
 </style>

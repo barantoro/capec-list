@@ -43,7 +43,7 @@ const editDescription = (pattern) => {
 </script>
 
 
-<style scoped>
+<style>
 table {
     width: 100%;
     border-collapse: collapse;
@@ -96,9 +96,6 @@ tr:hover {
     
     td::before {
         content: attr(data-label);
-        position: absolute;
-        left: 0;
-        width: 50%;
         padding-right: 15px;
         white-space: nowrap;
         font-weight: bold;

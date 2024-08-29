@@ -29,7 +29,7 @@ This project involves the development of a cybersecurity risk assessment tool de
     -   [EditModal](#edit-modal-spec)
     -   [TableRow](#table-row-spec)
     -   [GeneralTestingTips](#general-testing-tips)
--   [Notes](#Nnotes)
+-   [Notes](#notes)
 
 ## Overview
 

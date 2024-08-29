@@ -71,4 +71,10 @@ li {
 li span {
   word-break: break-word;
 }
+
+@media (max-width: 768px) {  
+  .expand-flex-item {
+    flex: 0 0 calc(45%); 
+  }
+}
 </style>
