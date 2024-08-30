@@ -1,6 +1,6 @@
 # CYMETRIS - Frontend Assessment Task
 
-This project involves the development of a cybersecurity risk assessment tool designed specifically for automotive systems. The tool focuses on presenting and analyzing Common Attack Pattern Enumeration and Classification (CAPEC) attack patterns relevant to vehicle cybersecurity. Demo hosted at [Github Pages](https://barantoro.github.io/capec-list/)
+This project involves the development of a cybersecurity risk assessment tool designed specifically for automotive systems. The tool focuses on presenting and analyzing Common Attack Pattern Enumeration and Classification (CAPEC) attack patterns relevant to vehicle cybersecurity.
 
 ## Table of contents
 
